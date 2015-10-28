@@ -1,0 +1,24 @@
+<div class="container-fluid">
+        <div class="row-fluid">
+            <h1>Tomasz Szymanek</h1>
+            <h2>Angular RSS Reader</h2>
+            <hr></hr>
+            <form>
+                <div class="input-prepend">
+              <div class="btn-group">
+                <button class="btn btn-default" type="button" ng-click="vm.load($event)">Get RSS Feed!</button>
+              </div>
+                <input type="text" class="feed-input" placeholder="Enter Feed URL" data-ng-model="vm.url" />
+            </div>
+            </form>
+        </div>
+        <div class="row-fluid">
+            <ul>
+                <li ng-repeat="feed in vm.feeds">
+                    <h5><a href="{{ feed.link }}">{{ feed.title }}</a></h5>
+                    <p class="text-left">{{ feed.contentSnippet }}</p>
+                    <span class="small">{{ feed.publishedDate }}</span>
+                </li>
+            </ul>
+        </div>
+</div>
